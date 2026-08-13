@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (1/2) · sf-t3-1779642675702-010</title>
+  <meta name="description" content="sf-t3-1779642675702-010에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://sf-t3-1779642675702-010.maphoshirts.com/posts.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ /* ===== RESET & BASE ===== */
+ *, *::before, *::after {
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+ }
+ html {
+ scroll-behavior: smooth;
+ font-size: 16px;
+ }
+ body {
+ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+ background-color: #1a1a1a;
+ color: #e5e5e5;
+ line-height: 1.4;
+ min-height: 100vh;
+ overflow-x: hidden;
+ }
+
+ /* ===== TYPOGRAPHY ===== */
+ h1, h2, h3, h4 {
+ font-family: 'Impact', 'Arial Black', system-ui, sans-serif;
+ font-weight: 900;
+ text-transform: uppercase;
+ letter-spacing: -0.02em;
+ color: #e5e5e5;
+ }
+ h1 {
+ font-size: clamp(3.5rem, 12vw, 8rem);
+ line-height: 0.85;
+ margin-bottom: 0.5rem;
+ transform: rotate(-1deg);
+ border-bottom: 4px solid #ff6b35;
+ display: inline-block;
+ padding-bottom: 0.2em;
+ }
+ h2 {
+ font-size: clamp(2.5rem, 6vw, 4rem);
+ line-height: 0.9;
+ margin-bottom: 1rem;
+ border-left: 4px solid #ff6b35;
+ padding-left: 0.5em;
+ }
+ h3 {
+ font-size: clamp(1.5rem, 3vw, 2.2rem);
+ line-height: 1;
+ }
+ p {
+ font-size: 1rem;
+ margin-bottom: 1rem;
+ max-width: 65ch;
+ }
+ a {
+ color: #ff6b35;
+ text-decoration: underline;
+ text-underline-offset: 4px;
+ transition: all 0.1s ease;
+ }
+ a:hover {
+ color: #e5e5e5;
+ background: #ff6b35;
+ text-decoration: none;
+ }
+
+ /* ===== LAYOUT ===== */
+ .container {
+ padding: 48px 32px;
+ max-width: 1400px;
+ margin: 0 auto;
+ }
+ section {
+ margin-bottom: 80px;
+ border: 3px solid #ff6b35;
+ padding: 48px 32px;
+ background: #1a1a1a;
+ position: relative;
+ }
+ section::before {
+ content: "◆";
+ position: absolute;
+ top: -18px;
+ left: 20px;
+ font-size: 1.5rem;
+ color: #ff6b35;
+ background: #1a1a1a;
+ padding: 0 8px;
+ }
+
+ /* ===== HEADER ===== */
+ header {
+ background: #1a1a1a;
+ border-bottom: 4px solid #ff6b35;
+ padding: 16px 32px;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ position: sticky;
+ top: 0;
+ z-index: 1000;
+ }
+ .logo {
+ font-family: 'Impact', 'Arial Black', sans-serif;
+ font-size: 2rem;
+ color: #ff6b35;
+ text-transform: uppercase;
+ letter-spacing: -0.03em;
+ transform: skewX(-5deg);
+ border: 3px solid #ff6b35;
+ padding: 4px 12px;
+ background: #1a1a1a;
+ }
+ .logo span {
+ color: #e5e5e5;
+ }
+
+ /* ===== NAV ===== */
+ nav {
+ display: flex;
+ align-items: center;
+ }
+ nav ul {
+ display: flex;
+ list-style: none;
+ gap: 32px;
+ }
+ nav ul li a {
+ font-family: 'Impact', 'Arial Black', sans-serif;
+ text-transform: uppercase;
+ font-size: 1.1rem;
+ color: #e5e5e5;
+ text-decoration: none;
+ padding: 4px 8px;
+ border: 2px solid transparent;
+ transition: all 0.1s;
+ }
+ nav ul li a:hover {
+ border-color: #ff6b35;
+ background: transparent;
+ color: #ff6b35;
+ }
+
+ /* ===== HAMBURGER ===== */
+ .hamburger {
+ display: none;
+ flex-direction: column;
+ cursor: pointer;
+ padding: 8px;
+ border: 2px solid #ff6b35;
+ background: #1a1a1a;
+ }
+ .hamburger span {
+ width: 30px;
+ height: 4px;
+ background: #ff6b35;
+ margin: 4px 0;
+ transition: 0.2s;
+ }
+
+ /* ===== HERO ===== */
+ .hero {
+ border: 4px solid #ff6b35;
+ padding: 80px 48px;
+ margin-bottom: 80px;
+ background: 
+ linear-gradient(45deg, #1a1a1a 25%, transparent 25%),
+ linear-gradient(-45deg, #1a1a1a 25%, transparent 25%),
+ repeating-linear-gradient(0deg, #ff6b35 0px, #ff6b35 2px, transparent 2px, transparent 8px);
+ background-size: 40px 40px, 40px 40px, 100% 100%;
+ position: relative;
+ overflow: hidden;
+ }
+ .hero::after {
+ content: "🔥 AI TREND 2025";
+ position: absolute;
+ bottom: 10px;
+ right: -20px;
+ font-family: 'Impact', sans-serif;
+ font-size: clamp(3rem, 8vw, 6rem);
+ color: rgba(255, 107, 53, 0.15);
+ transform: rotate(-5deg);
+ pointer-events: none;
+ white-space: nowrap;
+ }
+ .hero-content {
+ position: relative;
+ z-index: 1;
+ max-width: 800px;
+ }
+ .hero-content h1 {
+ color: #ff6b35;
+ text-shadow: 4px 4px 0 #1a1a1a, 6px 6px 0 #e5e5e5;
+ }
+ .hero-content p {
+ font-size: 1.4rem;
+ font-weight: 700;
+ margin: 1.5rem 0;
+ padding: 8px 16px;
+ border-left: 4px solid #ff6b35;
+ background: rgba(26, 26, 26, 0.8);
+ }
+ .hero-cta {
+ display: inline-block;
+ font-family: 'Impact', sans-serif;
+ font-size: 1.8rem;
+ color: #1a1a1a;
+ background: #ff6b35;
+ padding: 16px 48px;
+ text-decoration: none;
+ border: 4px solid #e5e5e5;
+ transform: rotate(2deg);
+ transition: all 0.1s;
+ margin-top: 1rem;
+ }
+ .hero-cta:hover {
+ transform: rotate(-2deg) scale(1.02);
+ background: #e5e5e5;
+ color: #1a1a1a;
+ border-color: #ff6b35;
+ }
+
+ /* ===== CARDS (UGC Reviews) ===== */
+ .review-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+ gap: 32px;
+ margin-top: 32px;
+ }
+ .review-card {
+ border: 3px solid #ff6b35;
+ padding: 24px;
+ background: #2a2a2a;
+ transform: rotate(var(--rot, 0deg));
+ transition: all 0.2s;
+ }
+ .review-card:hover {
+ transform: rotate(var(--rot, 0deg)) scale(1.02);
+ border-color: #e5e5e5;
+ }
+ .review-card:nth-child(odd) {
+ --rot: -1deg;
+ }
+ .review-card:nth-child(even) {
+ --rot: 1.5deg;
+ }
+ .review-header {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ margin-bottom: 12px;
+ padding-bottom: 12px;
+ border-bottom: 2px solid #ff6b35;
+ }
+ .review-nick {
+ font-family: 'Impact', sans-serif;
+ font-size: 1.2rem;
+ text-transform: uppercase;
+ color: #ff6b35;
+ }
+ .review-date {
+ font-size: 0.8rem;
+ opacity: 0.7;
+ }
+ .review-stars {
+ color: #ff6b35;
+ font-size: 1.4rem;
+ letter-spacing: 4px;
+ margin-bottom: 12px;
+ }
+ .review-text {
+ font-size: 0.95rem;
+ line-height: 1.5;
+ font-style: italic;
+ }
+ .review-text::before {
+ content: "“";
+ color: #ff6b35;
+ font-size: 2rem;
+ font-family: serif;
+ margin-right: 4px;
+ }
+
+ /* ===== INFO SECTION ===== */
+ .info-block {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 32px;
+ margin-top: 32px;
+ }
+ .info-item {
+ border: 3px solid #ff6b35;
+ padding: 24px;
+ background: #2a2a2a;
+ }
+ .info-item h3 {
+ color: #ff6b35;
+ margin-bottom: 16px;
+ border-bottom: 2px solid #ff6b35;
+ padding-bottom: 8px;
+ }
+ .info-item ul {
+ list-style: none;
+ }
+ .info-item ul li {
+ padding: 8px 0;
+ border-bottom: 1px solid rgba(255, 107, 53, 0.3);
+ display: flex;
+ gap: 8px;
+ }
+ .info-item ul li::before {
+ content: "▶";
+ color: #ff6b35;
+ font-size: 0.8rem;
+ }
+
+ /* ===== TREND SECTION ===== */
+ .trend-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+ gap: 32px;
+ margin-top: 32px;
+ }
+ .trend-item {
+ border: 3px solid #e5e5e5;
+ padding: 24px;
+ text-align: center;
+ background: #2a2a2a;
+ transform: skewX(-2deg);
+ }
+ .trend-item:nth-child(2) {
+ transform: skewX(2deg);
+ }
+ .trend-item .emoji {
+ font-size: 3rem;
+ display: block;
+ margin-bottom: 16px;
+ }
+ .trend-item h4 {
+ color: #ff6b35;
+ margin-bottom: 8px;
+ }
+
+ /* ===== CONTACT / CTA ===== */
+ .contact-block {
+ text-align: center;
+ padding: 64px 32px;
+ border: 4px solid #ff6b35;
+ background: repeating-linear-gradient(
+ 45deg,
+ #1a1a1a,
+ #1a1a1a 10px,
+ #2a2a2a 10px,
+ #2a2a2a 20px
+ );
+ }
+ .contact-block h2 {
+ border: none;
+ padding: 0;
+ margin-bottom: 24px;
+ }
+ .phone-link {
+ font-family: 'Impact', sans-serif;
+ font-size: clamp(2rem, 5vw, 3.5rem);
+ color: #ff6b35;
+ text-decoration: none;
+ border: 4px solid #ff6b35;
+ padding: 16px 48px;
+ display: inline-block;
+ transition: all 0.1s;
+ background: #1a1a1a;
+ }
+ .phone-link:hover {
+ background: #ff6b35;
+ color: #1a1a1a;
+ border-color: #e5e5e5;
+ }
+
+ /* ===== FOOTER ===== */
+ footer {
+ border-top: 4px solid #ff6b35;
+ padding: 48px 32px;
+ text-align: center;
+ background: #1a1a1a;
+ }
+ footer p {
+ margin: 0 auto;
+ font-size: 0.9rem;
+ opacity: 0.8;
+ }
+ footer .footer-links {
+ display: flex;
+ justify-content: center;
+ gap: 32px;
+ margin-bottom: 16px;
+ flex-wrap: wrap;
+ }
+ footer .footer-links a {
+ font-family: 'Impact', sans-serif;
+ font-size: 1rem;
+ text-transform: uppercase;
+ }
+
+ /* ===== RESPONSIVE ===== */
+ @media (max-width: 768px) {
+ .container {
+ padding: 24px 16px;
+ }
+ section {
+ padding: 32px 16px;
+ margin-bottom: 48px;
+ }
+ h1 {
+ transform: none;
+ font-size: clamp(2.5rem, 10vw, 4rem);
+ }
+ h2 {
+ font-size: clamp(1.8rem, 5vw, 2.5rem);
+ }
+ .hero {
+ padding: 48px 24px;
+ }
+ .hero-content p {
+ font-size: 1.1rem;
+ }
+ .hero-cta {
+ font-size: 1.3rem;
+ padding: 12px 32px;
+ }
+ .info-block {
+ grid-template-columns: 1fr;
+ }
+ .review-grid {
+ grid-template-columns: 1fr;
+ }
+ .trend-grid {
+ grid-template-columns: 1fr 1fr;
+ }
+
+ /* 햄버거 메뉴 */
+ .hamburger {
+ display: flex;
+ }
+ nav ul {
+ display: none;
+ flex-direction: column;
+ position: absolute;
+ top: 100%;
+ left: 0;
+ right: 0;
+ background: #1a1a1a;
+ border-bottom: 4px solid #ff6b35;
+ padding: 24px;
+ gap: 16px;
+ }
+ nav ul.active {
+ display: flex;
+ }
+ nav ul li a {
+ display: block;
+ padding: 12px 8px;
+ border: 2px solid transparent;
+ }
+ nav ul li a:hover {
+ border-color: #ff6b35;
+ }
+ }
+
+ @media (max-width: 480px) {
+ .trend-grid {
+ grid-template-columns: 1fr;
+ }
+ .contact-block {
+ padding: 32px 16px;
+ }
+ .phone-link {
+ font-size: 1.5rem;
+ padding: 12px 24px;
+ }
+ }
+
+ /* ===== UTILITY ===== */
+ .text-accent {
+ color: #ff6b35;
+ }
+ .border-accent {
+ border-color: #ff6b35;
+ }
+ .bg-dark {
+ background: #1a1a1a;
+ }
+ .skew-left {
+ transform: skewX(-3deg);
+ }
+ .skew-right {
+ transform: skewX(3deg);
+ }
+ .mt-32 {
+ margin-top: 32px;
+ }
+ .mb-32 {
+ margin-bottom: 32px;
+ }
+ .full-bleed {
+ width: 100%;
+ max-width: none;
+ }
+ .negative-margin {
+ margin-left: -48px;
+ margin-right: -48px;
+ }
+ @media (max-width: 768px) {
+ .negative-margin {
+ margin-left: -16px;
+ margin-right: -16px;
+ }
+ }
+ </style>
+  <meta property="og:title" content="글 목록 (1/2) · sf-t3-1779642675702-010">
+  <meta property="og:description" content="sf-t3-1779642675702-010에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://sf-t3-1779642675702-010.maphoshirts.com/posts.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+ <div class="logo">마<span>포</span>셔츠<span>룸</span></div>
+ <nav>
+ <div class="hamburger" onclick="toggleMenu()" aria-label="메뉴 열기">
+ 
+ 
+ 
+ </div>
+ <ul id="navMenu">
+ <li><a href="#hero">홈</a></li>
+ <li><a href="#info">정보</a></li>
+ <li><a href="#reviews">후기</a></li>
+ <li><a href="#trends">트렌드</a></li>
+ <li><a href="#contact">문의</a></li>
+ </ul>
+ </nav>
+ </header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 33개 · 1/2 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/field_note-002-mmq8y7.html">마포 셔츠룸 현장에서 놓치기 쉬운 포인트를 기록해봤다</a>
+        <p class="post-item__summary">마포 지역에서 새로운 유흥 트렌드로 주목받는 마포 셔츠룸 문화는 단순한 공간 이용을 넘어 복합적인 경험을 제공합니다. 최근 인공지능 기술이 접목된 예약 시스템과 고객 맞춤형 서비스 환경이 도입되면서</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1266.html">마포 셔츠룸 관점에서 본 구글 알고리즘 감점 치료 및 백링크 수술실</a>
+        <p class="post-item__summary">마포에서 마포 셔츠룸를 찾는 사람은 대체로 빠른 결론을 원하지만, 빠른 결론이 항상 좋은 선택은 아닙니다. 비슷한 페이지라도 설명의 순서와 근거가 다르면 신뢰도는 달라집니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-6700.html">마포 셔츠룸과 동대문 마사지의 새로운 만남</a>
+        <p class="post-item__summary">마포 셔츠룸은 최신 AI 트렌드를 반영한 옷세트 매장으로, 옷 스타일링부터 맞춤 추천까지 혁신적 서비스를 제공한다. 고객이 입고자 하는 의상을 선택하면 인공지능이 체형과 선호도를 분석해 최적의 사이</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-6701.html">마포 셔츠룸, AI 트렌드로 진화하는 프라이빗 공간</a>
+        <p class="post-item__summary">최근 마포 지역 유흥 업계에 새로운 변화의 바람이 불고 있다. AI 트렌드가 접목된 마포 셔츠룸이 등장하면서 기존과는 다른 방식의 서비스가 주목받고 있다. 단순한 공간 대여를 넘어 데이터 기반의 맞</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-6702.html">마포 셔츠룸: 지역 예술가와 연결된 패션 실험장</a>
+        <p class="post-item__summary">마포 셔츠룸은 마포 지역의 젊은 디자이너들이 모여 만들어낸 트렌디한 의류 공방이다. 스튜디오 내부는 현대적이면서도 아늑한 분위기로, 작품을 직접 만들어 보는 체험형 프로그램이 특징이다. 이곳은 다양</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-6703.html">마포 셔츠룸, AI 트렌드가 접대 문화에 던지는 새로운 물음</a>
+        <p class="post-item__summary">마포를 대표하는 접대 문화 중 하나인 셔츠룸은 꾸준한 수요를 바탕으로 지역 상권의 한 축을 형성해왔다. 최근 AI 기술이 유흥 업계 전반에 스며들면서 셔츠룸의 운영 방식과 고객 접점에도 눈에 띄는 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-6704.html">마포 셔츠룸의 AI 트렌드가 이끄는 새로운 밤문화</a>
+        <p class="post-item__summary">마포는 예전부터 서울의 문화 핫스팟으로 손꼽히며, 최근에는 AI 기반 서비스가 이 지역의 밤문화를 한층 끌어올리고 있다. 특히 패턴 인식과 자연어 처리 기술이 결합된 바비 서비스는 고객 맞춤형 추천</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-6705.html">마포 셔츠룸 업소의 온라인 입지 강화 전략</a>
+        <p class="post-item__summary">최근 마포 지역 셔츠룸 업소들이 디지털 마케팅에 집중하는 추세다. 기존에는 오프라인 중심의 고객 유입이 대부분이었지만, 온라인 검색과 SNS 채널을 통해 신규 고객을 확보하는 사례가 늘고 있다. 특</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-6706.html">마포에서 AI 트렌드가 살아 숨 쉬는 셔츠룸</a>
+        <p class="post-item__summary">마포 한복판에 새롭게 오픈한 AI 트렌드 매장은 디자인과 기술이 결합된 공간을 제공합니다. 기존에 휴대용 디자인 도구만이 제공되던 업계에 지능형 이미지 분석 기능을 도입해 작업 시간을 최소화합니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-6707.html">AI 트렌드가 바꾸는 마포 셔츠룸의 풍경</a>
+        <p class="post-item__summary">최근 마포 셔츠룸 업계에서도 AI 트렌드가 빠르게 확산되고 있다. 단순한 접객 서비스에서 벗어나 디지털 환경과의 접점을 확대하려는 움직임이 곳곳에서 포착되는데, 온라인 채널을 통한 고객 유입이 늘면</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-6708.html">마포 셔츠룸, AI 트렌드와 함께 찾는 최고의 쉼터</a>
+        <p class="post-item__summary">마포 셔츠룸은 마포 지역에 위치한 대형 거래 공간으로, 신뢰할 수 있는 AI 기술을 적용해 사용자의 편의를 극대화합니다. 풍부한 회의 시설과 넓은 공간은 업무 효율성을 높이며, 도심 속에도 침착한 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-6709.html">마포 셔츠룸, AI 트렌드와 만나다</a>
+        <p class="post-item__summary">최근 마포 지역의 유흥 업계에 AI 기술이 빠르게 도입되고 있다. 특히 홍대 인근을 중심으로 스마트 예약 시스템과 개인화된 서비스 추천이 자리 잡는 모양새다. 셔츠룸 업계 역시 이러한 변화의 흐름에</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-6710.html">마포 셔츠룸에서 AI와 예술이 만나는 순간</a>
+        <p class="post-item__summary">마포의 패션 공간, 마포 셔츠룸은 최신 AI 트렌드를 반영한 맞춤형 의류 서비스로, 디자이너와 소비자가 한 데 모이는 커뮤니티 허브입니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-6711.html">마포 셔츠룸, 새로운 트렌드로 주목받는 이유</a>
+        <p class="post-item__summary">최근 마포 일대에서 셔츠룸이 새로운 문화 공간으로 자리 잡고 있다. 기존 유흥 업소와 달리 셔츠룸은 격식 있는 비즈니스 자리부터 부담 없는 모임까지 폭넓게 활용될 수 있는 것이 특징이다. 마포 셔츠</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-6712.html">마포 셔츠룸, AI 트렌드가 흘러나오는 패션 공간</a>
+        <p class="post-item__summary">마포의 젊은 디자이너들이 모여 탄생한 마포 셔츠룸은 고전적인 셔츠와 현대적 감각이 조화를 이루는 곳입니다. 매주 열리는 워크숍에서는 소재부터 디자인까지 실시간으로 학습하며, AI 트렌드를 적극 반영</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-6713.html">AI 트렌드가 바꾸는 마포 셔츠룸의 풍경</a>
+        <p class="post-item__summary">마포 일대 셔츠룸 업소들 사이에서 AI 기술 도입 바람이 불고 있다. 단순한 오락 공간을 넘어 데이터 기반 운영 체계로 변화하는 모습이 눈에 띈다. 스마트한 시스템 도입이 고객 경험을 한층 업그레이</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260706-6714.html">마포 셔츠룸, AI 트렌드와 패션이 만나는 공간</a>
+        <p class="post-item__summary">마포는 변화의 중심지로, 매일 새로운 AI 혁신이 이곳에서 탄생합니다. 특히 디자인과 기술이 결합된 공간이 서울의 트렌드를 이끌고 있다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0346.html">마포 셔츠룸 방문객을 위한 구글 틈새 키워드 트래픽 외환 거래 전략 연구</a>
+        <p class="post-item__summary">흔히들 외환 거래는 거대 자본과 전문적인 금융 지식만이 성공을 보장한다고 오해하곤 합니다. 하지만 최근에는 마포 셔츠룸 등을 방문하는 감각적인 투자자들 사이에서 데이터를 기반으로 한 틈새 시장 공략</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0347.html">마포 셔츠룸 예약과 지수 성장 클리닉 정보</a>
+        <p class="post-item__summary">쾌적한 마포 셔츠룸 이용을 위해서는 인원 구성에 따른 사전 예약이 무엇보다 중요합니다. 인원이 많을수록 동선을 고려한 자리 배치가 필수적이며, 이는 웹사이트 운영에서 구조를 최적화하는 과정과 매우 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0452.html">마포 셔츠룸 이용 시 주의사항과 마곡 유곡 유흥 추천정보 비교</a>
+        <p class="post-item__summary">평소 즐겨 찾던 곳이 마포 셔츠룸이라면, 과연 다른 지역에서도 동일한 품질의 서비스를 기대할 수 있을까요? 새로운 장소를 찾을 때 여러분은 어떤 기준으로 업체를 선택하고 계신지 스스로 질문해 볼 필</p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <span class="pager__current">1</span>
+      <a class="pager__link" href="posts-2.html">2</a>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
