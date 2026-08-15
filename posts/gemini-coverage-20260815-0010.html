@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>마포 셔츠룸 안내 및 상권 이해를 위한 기본 정보</title>
+  <style>
+ /* Reset & Base */
+ *, *::before, *::after {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+ html {
+ font-size: 16px;
+ scroll-behavior: smooth;
+ }
+ body {
+ font-family: system-ui, -apple-system, 'Inter', sans-serif;
+ background-color: #faf8f5;
+ color: #2d2a26;
+ line-height: 1.6;
+ -webkit-font-smoothing: antialiased;
+ }
+ a {
+ color: #e07a5f;
+ text-decoration: none;
+ transition: opacity 0.2s ease;
+ }
+ a:hover {
+ opacity: 0.75;
+ }
+ img, svg {
+ max-width: 100%;
+ display: block;
+ }
+ ul {
+ list-style: none;
+ }
+
+ /* Container */
+ .container {
+ max-width: 960px;
+ margin: 0 auto;
+ padding: 0 24px;
+ }
+
+ /* Typography */
+ h1, h2, h3, h4 {
+ font-weight: 600;
+ line-height: 1.2;
+ color: #2d2a26;
+ }
+ h1 {
+ font-size: 2.5rem;
+ letter-spacing: -0.02em;
+ }
+ h2 {
+ font-size: 1.75rem;
+ margin-bottom: 24px;
+ border-bottom: 1px solid #2d2a26;
+ padding-bottom: 8px;
+ }
+ h3 {
+ font-size: 1.2rem;
+ }
+ p {
+ margin-bottom: 16px;
+ }
+
+ /* Header & Navigation */
+ header {
+ background: #faf8f5;
+ border-bottom: 1px solid #2d2a26;
+ position: sticky;
+ top: 0;
+ z-index: 100;
+ }
+ .header-inner {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 16px 24px;
+ max-width: 960px;
+ margin: 0 auto;
+ }
+ .logo {
+ font-size: 1.25rem;
+ font-weight: 700;
+ color: #2d2a26;
+ letter-spacing: -0.01em;
+ }
+ .logo span {
+ color: #e07a5f;
+ }
+ nav {
+ display: flex;
+ gap: 24px;
+ align-items: center;
+ }
+ nav a {
+ font-size: 0.9rem;
+ font-weight: 500;
+ color: #2d2a26;
+ padding: 4px 0;
+ border-bottom: 1px solid transparent;
+ transition: border-color 0.2s ease, color 0.2s ease;
+ }
+ nav a:hover {
+ border-bottom-color: #e07a5f;
+ color: #e07a5f;
+ }
+ .nav-cta {
+ background: #2d2a26;
+ color: #faf8f5 !important;
+ padding: 8px 16px !important;
+ border: none !important;
+ font-weight: 600;
+ border-radius: 0;
+ }
+ .nav-cta:hover {
+ background: #e07a5f;
+ color: #faf8f5 !important;
+ opacity: 1;
+ }
+
+ /* Hamburger */
+ .hamburger {
+ display: none;
+ flex-direction: column;
+ gap: 5px;
+ cursor: pointer;
+ background: none;
+ border: none;
+ padding: 4px;
+ }
+ .hamburger span {
+ display: block;
+ width: 28px;
+ height: 2px;
+ background: #2d2a26;
+ transition: all 0.3s ease;
+ }
+ .mobile-nav {
+ display: none;
+ background: #faf8f5;
+ border-top: 1px solid #2d2a26;
+ padding: 16px 24px;
+ flex-direction: column;
+ gap: 12px;
+ }
+ .mobile-nav a {
+ font-size: 1rem;
+ font-weight: 500;
+ color: #2d2a26;
+ padding: 8px 0;
+ border-bottom: 1px solid #e0ddd8;
+ }
+
+ /* Hero */
+ .hero {
+ padding: 64px 0 48px;
+ border-bottom: 1px solid #2d2a26;
+ }
+ .hero-grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 40px;
+ align-items: center;
+ }
+ .hero-content h1 {
+ margin-bottom: 16px;
+ }
+ .hero-content p {
+ font-size: 1.1rem;
+ color: #4a4642;
+ margin-bottom: 24px;
+ }
+ .hero-stats {
+ display: flex;
+ gap: 32px;
+ margin-top: 24px;
+ }
+ .hero-stat {
+ text-align: center;
+ }
+ .hero-stat .number {
+ font-size: 2rem;
+ font-weight: 700;
+ color: #e07a5f;
+ display: block;
+ }
+ .hero-stat .label {
+ font-size: 0.8rem;
+ text-transform: uppercase;
+ letter-spacing: 0.05em;
+ color: #4a4642;
+ }
+ .hero-visual {
+ background: #2d2a26;
+ aspect-ratio: 4/3;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ color: #faf8f5;
+ font-size: 1rem;
+ font-weight: 500;
+ text-align: center;
+ padding: 24px;
+ border: 1px solid #2d2a26;
+ }
+ .hero-visual svg {
+ width: 80px;
+ height: 80px;
+ fill: #e07a5f;
+ }
+
+ /* Sections */
+ section {
+ padding: 40px 0;
+ border-bottom: 1px solid #2d2a26;
+ }
+ section:last-of-type {
+ border-bottom: none;
+ }
+
+ /* Features Grid */
+ .features-grid {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 16px;
+ }
+ .feature-card {
+ border: 1px solid #2d2a26;
+ padding: 24px;
+ background: #faf8f5;
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ }
+ .feature-card:hover {
+ transform: translateY(-2px);
+ box-shadow: 0 2px 4px rgba(45,42,38,0.1);
+ }
+ .feature-card .icon {
+ font-size: 2rem;
+ margin-bottom: 12px;
+ display: block;
+ }
+ .feature-card h3 {
+ margin-bottom: 8px;
+ }
+ .feature-card p {
+ font-size: 0.9rem;
+ color: #4a4642;
+ margin-bottom: 0;
+ }
+
+ /* Reviews */
+ .reviews-grid {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 16px;
+ }
+ .review-card {
+ border: 1px solid #2d2a26;
+ padding: 24px;
+ background: #faf8f5;
+ }
+ .review-header {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ margin-bottom: 12px;
+ }
+ .review-author {
+ font-weight: 600;
+ font-size: 0.9rem;
+ }
+ .review-date {
+ font-size: 0.75rem;
+ color: #4a4642;
+ }
+ .review-stars {
+ color: #e07a5f;
+ font-size: 0.9rem;
+ margin-bottom: 8px;
+ }
+ .review-text {
+ font-size: 0.9rem;
+ color: #4a4642;
+ line-height: 1.5;
+ }
+
+ /* CTA Section */
+ .cta-section {
+ background: #2d2a26;
+ color: #faf8f5;
+ padding: 48px 0;
+ border-bottom: 1px solid #2d2a26;
+ }
+ .cta-section .container {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 40px;
+ align-items: center;
+ }
+ .cta-section h2 {
+ color: #faf8f5;
+ border-bottom-color: #e07a5f;
+ margin-bottom: 16px;
+ }
+ .cta-section p {
+ color: #ddd9d4;
+ margin-bottom: 24px;
+ }
+ .cta-button {
+ display: inline-block;
+ background: #e07a5f;
+ color: #faf8f5;
+ padding: 12px 32px;
+ font-weight: 600;
+ font-size: 1rem;
+ border: 1px solid #e07a5f;
+ transition: background 0.2s ease, color 0.2s ease;
+ }
+ .cta-button:hover {
+ background: transparent;
+ color: #e07a5f;
+ }
+ .cta-visual {
+ background: #3a3632;
+ aspect-ratio: 4/3;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ border: 1px solid #e07a5f;
+ color: #ddd9d4;
+ font-size: 0.9rem;
+ }
+
+ /* Footer */
+ footer {
+ background: #faf8f5;
+ padding: 32px 0;
+ border-top: 1px solid #2d2a26;
+ }
+ .footer-grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 24px;
+ }
+ .footer-info p {
+ font-size: 0.85rem;
+ color: #4a4642;
+ margin-bottom: 4px;
+ }
+ .footer-info a {
+ color: #2d2a26;
+ font-weight: 500;
+ }
+ .footer-copyright {
+ margin-top: 24px;
+ padding-top: 16px;
+ border-top: 1px solid #e0ddd8;
+ text-align: center;
+ font-size: 0.8rem;
+ color: #4a4642;
+ }
+
+ /* Responsive */
+ @media (max-width: 768px) {
+ .container {
+ padding: 0 16px;
+ }
+ .header-inner {
+ padding: 12px 16px;
+ }
+ nav {
+ display: none;
+ }
+ .hamburger {
+ display: flex;
+ }
+ .mobile-nav.active {
+ display: flex;
+ }
+
+ .hero-grid {
+ grid-template-columns: 1fr;
+ gap: 24px;
+ }
+ .hero {
+ padding: 40px 0 32px;
+ }
+ h1 {
+ font-size: 1.75rem;
+ }
+ .hero-stats {
+ gap: 16px;
+ flex-wrap: wrap;
+ }
+ .hero-stat .number {
+ font-size: 1.5rem;
+ }
+
+ .features-grid {
+ grid-template-columns: 1fr;
+ }
+ .reviews-grid {
+ grid-template-columns: 1fr;
+ }
+ .cta-section .container {
+ grid-template-columns: 1fr;
+ gap: 24px;
+ }
+ .footer-grid {
+ grid-template-columns: 1fr;
+ gap: 16px;
+ }
+ section {
+ padding: 32px 0;
+ }
+ }
+
+ /* Utilities */
+ .text-accent {
+ color: #e07a5f;
+ }
+ .border-rule {
+ border-bottom: 1px solid #2d2a26;
+ margin: 0;
+ }
+ </style>
+  <link rel="canonical" href="https://sf-t3-1779642675702-010.maphoshirts.com/posts/gemini-coverage-20260815-0010.html">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <meta property="og:url" content="https://sf-t3-1779642675702-010.maphoshirts.com/posts/gemini-coverage-20260815-0010.html">
+  <meta property="og:title" content="마포 셔츠룸 안내 및 상권 이해를 위한 기본 정보">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+ <div class="header-inner">
+ <div class="logo">마포<span>셔츠룸</span></div>
+ <nav>
+ <a href="#overview">개요</a>
+ <a href="#features">특징</a>
+ <a href="#reviews">리뷰</a>
+ <a href="#contact" class="nav-cta">문의하기</a>
+ </nav>
+ <button class="hamburger" aria-label="메뉴 열기" onclick="toggleMobileMenu()">
+ 
+ 
+ 
+ </button>
+ </div>
+ <div class="mobile-nav" id="mobileNav">
+ <a href="#overview" onclick="toggleMobileMenu()">개요</a>
+ <a href="#features" onclick="toggleMobileMenu()">특징</a>
+ <a href="#reviews" onclick="toggleMobileMenu()">리뷰</a>
+ <a href="#contact" onclick="toggleMobileMenu()">문의하기</a>
+ </div>
+ </header>
+    <main>
+<h1>마포 셔츠룸 안내 및 상권 이해를 위한 기본 정보</h1>
+<p>마포 일대에서 셔츠룸이라 불리는 업소 형태를 알아보려는 분들이라면, 우선 이 업종이 어떤 서비스 구조로 운영되는지를 먼저 이해하는 것이 도움이 됩니다. 셔츠룸은 일반적으로 라운지 형태의 공간에서 직원이 손님과 함께 자리하고 대화와 음료 서비스를 제공하는 형태로, 마포 지역 내에서도 특정 상권을 중심으로 밀집해 있습니다. 지역 특성상 접근성이 좋은 곳에 위치한 경우가 많아, 이용 전에 미리 위치와 이용 방식, 예상 동선을 확인해 두는 것이 권장됩니다.</p>
+<p>마포 셔츠룸을 처음 접하는 사람이라면, 업소 간 편차가 크고 운영 방식이 동일하지 않다는 점을 염두에 두어야 합니다. 동일한 이름으로 불리더라도 내부 운영 규칙, 직원 구성, 공간 구조, 예약 방식 등이 다를 수 있어, 방문 전에 확인 가능한 정보를 최대한 비교해 보는 과정이 필요합니다. 특히 단순한 위치뿐 아니라 이용 절차, 비용 구성, 대기 여부 등 실제 이용에 영향을 주는 요소들에 대한 안내가 있는지 살피는 것이 좋습니다.</p>
+<p>마포 셔츠룸을 알아보는 과정에서는 유흥 상권 전반의 맥락을 함께 파악해 두면 선택에 도움이 됩니다. 상권별 특성, 이용자 이동 경로, 시간대별 혼잡도, 주변 교통 상황 등은 개별 업소 선택보다 넓은 범위에서 판단하는 기준이 되기 때문입니다. 이러한 정보는 <a class="anchor-link" href="https://trend.sinsa-room-zone.xyz/" data-bpaas-link-target="t2-trend-sinsa-room-zone">sinsa room zone</a> 에서 확인할 수 있어 마포 지역의 유흥 상권 흐름을 이해하고자 할 때 참고할 만합니다. 업소 단독 정보만 보기보다는 상권 전체의 흐름을 함께 보면 예상치 못한 상황을 줄이는 데 유리합니다.</p>
+<p>마포 셔츠룸 관련 정보를 확인할 때는 안전과 책임 있는 이용도 함께 고려하는 것이 바람직합니다. 과도한 음주, 무리한 일정, 명확하지 않은 비용 안내 등은 이용 과정에서 문제가 될 수 있으므로, 의문이 생기는 부분은 이용 전에 분명히 묻고 확인하는 과정이 필요합니다. 또한 주변 교통 수단과 귀가 동선까지 미리 정리해 두면 이용 뒤 안전한 귀가에 도움이 됩니다. 정보를 확인할 때에도 출처가 분명한 자료를 우선하고 확인되지 않은 구체적 수치나 사실은 무비판적으로 수용하지 않는 태도가 필요합니다. 끝으로 마포 지역 내 정확한 도로명과 대략적인 상권 범위를 함께 확인하려면 카카오맵에서 서울 정보를 검색하는 경로도 참고할 수 있다. 보다 정확한 위치 파악이 필요한 경우 <a href="https://map.kakao.com/?q=%EC%84%9C%EC%9A%B8%20%EC%A0%95%EB%B3%B4%20%EB%B8%94%EB%A1%9C%EA%B7%B8">카카오맵 서울 정보 검색</a>을 통해 주변 지도와 대략적인 거리를 함께 확인하는 것이 이해에 도움이 됩니다.</p>
+        <nav class="post-pager" aria-label="글 이동">
+      <a class="post-pager__prev" href="../posts/gemini-coverage-20260721-0462.html">← 마포 셔츠룸 vs 마곡 가라오케 추천정보 가격 비교 기준</a>
+      <a class="post-pager__index" href="../posts.html">글 목록</a>
+      <a class="post-pager__next" href="../posts/gemini-coverage-20260815-0011.html">마포 셔츠룸 안내와 기초 정보 정리 →</a>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
